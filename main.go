@@ -76,16 +76,13 @@ func maxChunks(data []int) int {
 func main() {
 	fmt.Printf("Генерируем %d целых чисел\n", SIZE)
 	numbers := generateRandomElements(SIZE)
-
 	fmt.Println("Ищем максимальное значение в один поток")
-	// ваш код здесь
 	start := time.Now()
 	max := maximum(numbers)
 	elapsed := time.Now().Sub(start).Milliseconds()
 	fmt.Printf("Максимальное значение элемента: %d\nВремя поиска: %d ms\n", max, elapsed)
 	start = time.Now()
 	fmt.Printf("Ищем максимальное значение в %d потоков\n", CHUNKS)
-	// ваш код здесь
 	max = maxChunks(numbers)
 	elapsed = time.Now().Sub(start).Milliseconds()
 	fmt.Printf("Максимальное значение элемента: %d\nВремя поиска: %d ms\n", max, elapsed)
